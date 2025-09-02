@@ -7,6 +7,8 @@ import CanvasLoader from "../components/CanvasLoader.jsx";
 import { Leva, useControls } from 'leva';
 import { useMediaQuery } from 'react-responsive';
 import { calculateSizes } from '../constants/index.js';
+import Target from "../components/Target.jsx";
+import ReactLogo from "../components/ReactLogo.jsx";
 
 const Hero = () => {
 
@@ -77,6 +79,12 @@ const Hero = () => {
                         scale={sizes.deskScale}
                         rotation={[0.3, -Math.PI, 0]}
                         />
+
+                        <group>
+                            <Target position={sizes.targetPosition}/>
+                            <ReactLogo position={sizes.reactLogoPosition}/>
+                        </group>
+
                         <ambientLight intensity={1}/>
                         <directionalLight position={[10, 10, 10]} intensity={0.5}/>
                     </Suspense>
