@@ -31,7 +31,7 @@ body {
   }
 
   .nav-li_a {
-    @apply text-lg md:text-base hover:text-white transition-colors;
+    @apply text-lg md:text-base hover:text-white transition-colors duration-300 ease-out;
   }
 
   .nav-sidebar {
@@ -44,7 +44,7 @@ body {
 
   /* button component */
   .btn {
-    @apply flex gap-4 items-center justify-center cursor-pointer p-3 rounded-md bg-black-300  transition-all active:scale-95 text-white mx-auto;
+    @apply flex gap-4 items-center justify-center cursor-pointer p-3 rounded-md bg-black-300  transition-all duration-300 ease-out active:scale-95 text-white mx-auto;
   }
 
   .btn-ping {
@@ -79,8 +79,18 @@ body {
 
   /* projects section  */
   .arrow-btn {
-    @apply w-10 h-10 p-3 cursor-pointer active:scale-95 transition-all rounded-full arrow-gradient;
+    @apply relative z-50 w-10 h-10 p-3 cursor-pointer active:scale-95 transition-all duration-300 ease-out rounded-full arrow-gradient;
   }
+
+  .arrow-btn::after {
+    @apply absolute inset-0 rounded-full bg-white/0 transition-colors duration-300;
+    content: "";
+  }
+
+  .arrow-btn:hover::after {
+    @apply bg-white/10;
+  }
+
 
   .tech-logo {
     @apply w-10 h-10 rounded-md p-2 bg-neutral-100 bg-opacity-10 backdrop-filter backdrop-blur-lg flex justify-center items-center;
@@ -166,6 +176,16 @@ body {
     rgba(255, 255, 255, 0.000025) 50%,
     rgba(255, 255, 255, 0.000025) 50%,
     rgba(255, 255, 255, 0.025) 100%
+  );
+}
+
+.arrow-btn:hover {
+  background-image: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0.2) 10%,
+    rgba(255, 255, 255, 0.05) 50%,
+    rgba(255, 255, 255, 0.05) 50%,
+    rgba(255, 255, 255, 0.1) 100%
   );
 }
 
