@@ -1,18 +1,18 @@
 import React from 'react'; 
 import { Canvas } from "@react-three/fiber"; 
 import { PerspectiveCamera } from '@react-three/drei';
-import HackerRoom from "../components/HackerRoom.jsx";
 const { Suspense } = React;
 import CanvasLoader from "../components/CanvasLoader.jsx";
-// import { Leva, useControls } from 'leva';
 import { useMediaQuery } from 'react-responsive';
 import { calculateSizes } from '../constants/index.js';
-import Target from "../components/Target.jsx";
-import ReactLogo from "../components/ReactLogo.jsx";
-import Cube from "../components/Cube.jsx";
-import Rings from "../components/Rings.jsx";
 import HeroCamera from '../components/HeroCamera.jsx';
 import Button from '../components/Button.jsx';
+
+const HackerRoom = React.lazy(() => import("../components/HackerRoom.jsx"));
+const Target = React.lazy(() => import("../components/Target.jsx"));
+const ReactLogo = React.lazy(() => import("../components/ReactLogo.jsx"));
+const Cube = React.lazy(() => import("../components/Cube.jsx"));
+const Rings = React.lazy(() => import("../components/Rings.jsx"));
 
 const Hero = () => {
 
@@ -69,16 +69,15 @@ const Hero = () => {
             <p className='hero_tag text-gray_gradient'>Building Products & Brands</p>
 
             <div className='w-full h-full absolute inset-0'>
-                {/* <Leva/> */}
-                <Canvas className='w-full h-full'>
+                <Canvas className='w-full h-full'
+                        dpr={[1, 1.5]}
+                        frameloop="always"
+                >
                     <Suspense fallback={<CanvasLoader/>}>
                     <PerspectiveCamera makeDefault position={[0, 0, 30]}></PerspectiveCamera>
 
                     <HeroCamera isMobile={isMobile}>
                         <HackerRoom 
-                            // scale={0.07} 
-                            // position={[0, 0, 0]} 
-                            // rotation={[0, 0, 0]} 
                             position={sizes.deskPosition}
                             scale={sizes.deskScale}
                             rotation={[0.2, -Math.PI, 0]}
@@ -92,8 +91,8 @@ const Hero = () => {
                             <Rings position={sizes.ringPosition}/>
                         </group>
 
-                        <ambientLight intensity={1}/>
-                        <directionalLight position={[10, 10, 10]} intensity={0.5}/>
+                        <ambientLight intensity={0.9}/>
+                        <directionalLight position={[10, 10, 10]} intensity={0.3}/>
                     </Suspense>
                 </Canvas>
             </div>
