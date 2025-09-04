@@ -20,7 +20,7 @@ const Contact = () => {
         setLoading(true);
 
         try {
-            const res = await axios.post("http://localhost:5000/send", {
+            const res = await axios.post("https://aarondelen.portfolio/api/sendEmail", {
                 from_name: form.name,
                 from_email: form.email,
                 message: form.message
