@@ -2,13 +2,16 @@ import React from 'react'
 import { myProjects } from '../constants'
 import { useState } from 'react'    
 import { Canvas } from "@react-three/fiber"; 
-import DemoComputer from "../components/DemoComputer.jsx";
 import { OrbitControls } from "@react-three/drei";
 import { Suspense } from 'react';
 import CanvasLoader from '../components/CanvasLoader.jsx';
 import { Center } from '@react-three/drei';
+import { useInView } from 'react-intersection-observer';
+import DemoComputer from "../components/DemoComputer.jsx";
 
 const Projects = () => {
+
+    const { ref, inView } = useInView({ triggerOnce: true });
     const [selectedProjectIndex, setSelectedProjectIndex] = useState(0)
 
     const currentProject = myProjects[selectedProjectIndex];
@@ -61,29 +64,31 @@ const Projects = () => {
 
                 <div className='flex justify-between items-center mt-7'>
                         <button className="arrow-btn" onClick={() => handleNavigation('previous')}>
-                            <img src="/assets/left-arrow.png" alt="left-arrow" className='w-4 h-4 ' />
+                            <img src="/assets/left-arrow.png" alt="left-arrow" aria-label="Previous project" className='w-4 h-4 ' />
                         </button>
 
                         <button className='arrow-btn' onClick={() => handleNavigation('next')}>
-                            <img src="/assets/right-arrow.png" alt="right-arrow" className='w-4 h-4' />
+                            <img src="/assets/right-arrow.png" alt="right-arrow" aria-label="Next project" className='w-4 h-4' />
                         </button>
                 </div> 
             </div>
 
-            <div className='border border-black-300 bg-black-300 rounded-lg h-96 md:h-full'>
-                <Canvas className='cursor-grab active:cursor-grabbing'>
-                    <ambientLight intensity={Math.PI}/>
-                    <directionalLight position={[10, 10, 5]}/>
-
-                    <Center>
-                        <Suspense fallback={<CanvasLoader />}>
+            <div ref={ref} className='border border-black-300 bg-black-300 rounded-lg h-96 md:h-full'>
+                {inView && (
+                <Canvas   className='cursor-grab active:cursor-grabbing'
+                          style={{ display: inView ? 'block' : 'none' }}>
+                    <Suspense fallback={<CanvasLoader />}>
+                        <ambientLight intensity={1.5}/>
+                        <directionalLight position={[10, 10, 10]} intensity={0.5}/>
+                            <Center>
                             <group scale={1.9} position={[0, -3, 0]} rotation={[0, -0.1, 0]}>
                                 <DemoComputer texture={currentProject.texture} />
                             </group>
-                        </Suspense>
-                    </Center>
-                    <OrbitControls maxPolarAngle={Math.PI / 2} enableZoom={false}/>
+                            </Center>
+                        <OrbitControls maxPolarAngle={Math.PI / 2} enableZoom={false}/>
+                    </Suspense>
                 </Canvas>
+                )}
             </div>
         </div>
     </section>

@@ -1,37 +1,47 @@
-import React, { useEffect, useRef } from 'react'
-import { useAnimations,useFBX, useGLTF } from '@react-three/drei'
+import React, { useEffect, useRef, useMemo } from 'react'
+import { useAnimations, useFBX, useGLTF } from '@react-three/drei'
 
+// ✅ Preload avatar GLB once (avoids re-fetching on every mount)
+useGLTF.preload('/models/animations/pogiman.glb')
 
-const Developer = ({animationName = 'salute', ...props}) => {
-  const group = useRef();
-  const { nodes, materials } = useGLTF('/models/animations/avatarBlack.glb')
+const Developer = ({ animationName = 'salute', ...props }) => {
+  const group = useRef()
+  const { nodes, materials } = useGLTF('/models/animations/pogiman.glb')
 
-  const {animations: saluteAnimation} = useFBX("/models/animations/salute.fbx");
-  const {animations: clappingAnimation} = useFBX("/models/animations/clapping.fbx");
-  const {animations: victoryAnimation} = useFBX("/models/animations/victory.fbx");
-  
-  const {actions} = useAnimations([saluteAnimation[0], clappingAnimation[0], victoryAnimation[0]], group);
+  // ✅ Load animations (FBX → GLTF under the hood)
+  const salute = useFBX('/models/animations/salute.fbx')
+  const clapping = useFBX('/models/animations/clapping.fbx')
+  const victory = useFBX('/models/animations/victory.fbx')
 
-  saluteAnimation[0].name = 'salute'
-  clappingAnimation[0].name = 'clapping'
-  victoryAnimation[0].name = 'victory'
-  
+  // ✅ Name animations only once (no re-renders)
+  useMemo(() => {
+    salute.animations[0].name = 'salute'
+    clapping.animations[0].name = 'clapping'
+    victory.animations[0].name = 'victory'
+  }, [salute, clapping, victory])
+
+  // ✅ UseAnimations with all clips
+  const { actions } = useAnimations(
+    [salute.animations[0], clapping.animations[0], victory.animations[0]],
+    group
+  )
+
+  // ✅ Smooth transition between animations
   useEffect(() => {
-    const action = actions[animationName];
-    if (!action) return; // safety check if animation is not ready
-  
-    action.reset().fadeIn(0.5).play();
-  
+    const action = actions[animationName]
+    if (!action) return
+
+    action.reset().fadeIn(0.5).play()
+
     return () => {
-      // only fadeOut if the action still exists
       if (actions[animationName]) {
-        actions[animationName].fadeOut(0.5);
+        actions[animationName].fadeOut(0.5)
       }
-    };
-  }, [animationName, actions]);
+    }
+  }, [animationName, actions])
 
   return (
-    <group {...props} dispose={null} ref={group}>
+    <group ref={group} {...props} dispose={null}>
       <primitive object={nodes.Hips} />
       <skinnedMesh
         name="EyeLeft"
@@ -98,7 +108,5 @@ const Developer = ({animationName = 'salute', ...props}) => {
     </group>
   )
 }
-
-useGLTF.preload('/models/animations/Avatar.glb')
 
 export default Developer

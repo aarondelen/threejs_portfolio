@@ -7,6 +7,7 @@ import Clients from "./sections/Clients.jsx"
 import Experience from "./sections/Experience.jsx"
 import Contact from "./sections/Contact.jsx"
 import Footer from "./sections/Footer.jsx"
+import { Toaster } from 'react-hot-toast'
 
 const App = () => {
   return (
@@ -19,6 +20,15 @@ const App = () => {
       <Experience/>
       <Contact/>
       <Footer/>
+      <Toaster position="top-right" toastOptions={{
+        className: '',
+        style: {
+          background: '#1A1A1A', // dark mode bg
+          color: '#fff',
+          borderRadius: '8px',
+          padding: '12px 16px',
+        },
+      }} />
     </main>
   )
 }
