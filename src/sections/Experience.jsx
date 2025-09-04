@@ -1,4 +1,4 @@
-import React, { Suspense, useState } from 'react'
+import React, { Suspense, useState, lazy } from 'react'
 import { Canvas } from '@react-three/fiber'
 import { workExperiences } from '../constants/index.js'
 import { div } from 'three/tsl'
@@ -18,12 +18,12 @@ const Experience = () => {
             <div className='work-container'>
                 <div className='work-canvas'>
                     <Canvas>
+                        <Suspense fallback={<CanvasLoader/>}>
                         <ambientLight intensity={7}/>
                         <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1}/>
                         <directionalLight position={[10, 10, 10]} intensity={1}/>
 
                         <OrbitControls enableZoom={false} maxPolarAngle={Math.PI / 2}/>
-                        <Suspense fallback={<CanvasLoader/>}>
                             <Developer position-y={-3} scale={3} animationName={animationName}/>
                         </Suspense>
                     </Canvas>
