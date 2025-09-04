@@ -7,7 +7,7 @@ import { PerformanceMonitor } from '@react-three/drei'
 import { useInView } from 'react-intersection-observer'
 
 const Experience = () => {
-  const [dpr, setDpr] = useState(1.5)        // devicePixelRatio
+  const [dpr, setDpr] = useState(1, 2)        // devicePixelRatio
   const [animationName, setAnimationName] = useState('salute')
 
   const { ref, inView } = useInView({ triggerOnce: false })
