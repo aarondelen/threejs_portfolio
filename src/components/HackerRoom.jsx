@@ -2,7 +2,7 @@ import { useGLTF, useTexture } from '@react-three/drei';
 
 
 const HackerRoom = (props) => {
-  const { nodes, materials } = useGLTF('/models/hacker-room.glb', true);
+  const { nodes, materials } = useGLTF('/models/hacker-room-opt-opt.glb', true);
 
   const monitortxt = useTexture('textures/desk/monitor.png');
   const screenTxt = useTexture('textures/desk/screen.png');
@@ -34,6 +34,6 @@ const HackerRoom = (props) => {
   );
 }
 
-useGLTF.preload('/models/hacker-room.glb', true);
+useGLTF.preload('/models/hacker-room-opt-opt.glb', true);
 
 export default HackerRoom;

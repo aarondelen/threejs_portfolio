@@ -11,8 +11,8 @@ export const navLinks = [
   },
   {
     id: 3,
-    name: 'Work',
-    href: '#work',
+    name: 'Project',
+    href: '#project',
   },
   {
     id: 4,
@@ -24,37 +24,38 @@ export const navLinks = [
 export const clientReviews = [
   {
     id: 1,
-    name: 'Emily Johnson',
-    position: 'Marketing Director at GreenLeaf',
+    name: 'Sophia Martinez',
+    position: 'Creative Director at Nova Studio',
     img: 'assets/review1.png',
     review:
-      'Working with Adrian was a fantastic experience. He transformed our outdated website into a modern, user-friendly platform. His attention to detail and commitment to quality are unmatched. Highly recommend him for any web dev projects.',
+      'Aaron turned our scattered ideas into a sleek, interactive website that perfectly reflects our brand. His sense of design and attention to user experience is rare among developers. Truly elevated our online presence.',
   },
   {
     id: 2,
-    name: 'Mark Rogers',
-    position: 'Founder of TechGear Shop',
+    name: 'David Kim',
+    position: 'Founder of NextWave Apparel',
     img: 'assets/review2.png',
     review:
-      'Adrian’s expertise in web development is truly impressive. He delivered a robust and scalable solution for our e-commerce site, and our online sales have significantly increased since the launch. He’s a true professional! Fantastic work.',
+      'From concept to launch, Aaron handled everything with precision. Our e-commerce store now loads faster, looks sharper, and converts better. His mix of technical skill and creative vision is exactly what startups need.',
   },
   {
     id: 3,
-    name: 'John Dohsas',
-    position: 'Project Manager at UrbanTech ',
+    name: 'Reynold Owens',
+    position: 'Product Manager at BrightPath',
     img: 'assets/review3.png',
     review:
-      'I can’t say enough good things about Adrian. He was able to take our complex project requirements and turn them into a seamless, functional website. His problem-solving abilities are outstanding.',
+      'Working with Aaron was effortless. He took complex requirements and built a clean, intuitive interface that our customers love. His problem-solving mindset and ability to communicate clearly made the whole process smooth.',
   },
   {
     id: 4,
-    name: 'Ether Smith',
-    position: 'CEO of BrightStar Enterprises',
+    name: 'James Carter',
+    position: 'CEO of Horizon Ventures',
     img: 'assets/review4.png',
     review:
-      'Adrian was a pleasure to work with. He understood our requirements perfectly and delivered a website that exceeded our expectations. His skills in both frontend backend dev are top-notch.',
+      'Aaron exceeded expectations. He not only delivered a high-performing website but also suggested improvements that saved us time and money. A reliable partner for anyone looking to scale their digital presence.',
   },
 ];
+
 
 export const myProjects = [
   {
@@ -260,29 +261,24 @@ export const calculateSizes = (isSmall, isMobile, isTablet) => {
 export const workExperiences = [
   {
     id: 1,
-    name: 'Framer',
-    pos: 'Lead Web Developer',
-    duration: '2022 - Present',
-    title: "Framer serves as my go-to tool for creating interactive prototypes. I use it to bring designs to  life, allowing stakeholders to experience the user flow and interactions before development.",
-    icon: '/assets/framer.svg',
+    name: 'Collantra',
+    pos: 'Founder',
+    duration: '2023',
+    title: `Prototyped a creator–brand collaboration SaaS with full dashboard, community features, and secure onboarding powered by Supabase and Clerk.
+    Focused on delivering polished UI/UX using React, shadcn/ui, and Framer Motion. Learned fast-paced product building as a solo founder, balancing frontend detail with backend architecture.`,
+    icon: '/assets/collantra.svg',
     animation: 'victory',
   },
   {
     id: 2,
-    name: 'Figma',
-    pos: 'Web Developer',
-    duration: '2020 - 2022',
-    title: "Figma is my collaborative design platform of choice. I utilize it to work seamlessly with team members and clients, facilitating real-time feedback and design iterations. Its cloud-based.",
-    icon: '/assets/figma.svg',
+    name: 'Datagen OPC',
+    pos: 'AI Tech Specialist',
+    duration: '2022 – 2023',
+    title: `Engineered AI agents for voice campaigns, built custom scrapers, and automated lead delivery pipelines for international clients. 
+    Improved campaign performance by testing LLM configurations with OpenAI, Deepgram, and PlayHT. Collaborated with devs and QA to align system reliability with client KPIs.`,
+    icon: '/assets/dtgLogo.png',
     animation: 'clapping',
   },
-  {
-    id: 3,
-    name: 'Notion',
-    pos: 'Junior Web Developer',
-    duration: '2019 - 2020',
-    title: "Notion helps me keep my projects organized. I use it for project management, task tracking, and as a central hub for documentation, ensuring that everything from design notes to.",
-    icon: '/assets/notion.svg',
-    animation: 'salute',
-  },
 ];
+
+

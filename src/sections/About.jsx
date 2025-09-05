@@ -24,20 +24,22 @@ const About = () => {
 
             <div className="col-span-1 xl:row-span-3">
                 <div className="grid-container">
-                    <img src="assets/grid1.png" alt="grid-1" className='w-full sm:h-[276px] h-fit object-contain' />
+                    <img src="assets/grid1.webp" alt="grid-1" className='w-full sm:h-[276px] h-fit object-contain' />
                         <div>
                             <p className='grid-headtext'>Hi, I'm Aaron</p>
-                            <p className='grid-subtext'>With 12 years of professional experience, I have honed my skills in both frontend and backend dev, creating dynamic and responsive websites.</p>
+                            <p className='grid-subtext'>With a year of professional experience, I have honed my skills in turning wireframes into polished responsive digital websites and practical full-stack exposure.
+                            </p>
+
                         </div>
                 </div>
             </div>
 
             <div className='col-span-1 xl:row-span-3'>
                 <div className="grid-container">
-                    <img src='assets/grid2.png' alt="grid-2" className='w-full sm:h-[276px] h-fit object-contain'/>
+                    <img src='assets/grid2.webp' alt="grid-2" className='w-full sm:h-[276px] h-fit object-contain'/>
                     <div>
                         <p className='grid-headtext'>Tech Stack</p>
-                        <p className='grid-subtext'>I specialize in JavaScript/TypeScript with a focus on React and Next.js ecosystems.</p>
+                        <p className='grid-subtext'>I specialize in React, TailwindCSS, Figma, and Elementor — crafting interfaces that are both user-friendly and visually striking.</p>
                     </div>
                 </div>
             </div>
@@ -71,17 +73,17 @@ const About = () => {
 
             <div className='xl:col-span-2 xl:row-span-3'>
                 <div className='grid-container'>
-                    <img src="assets/grid3.png" alt="grid-3" className='w-full sm:h-[266px] h-fit object-contain'/>
+                    <img src="assets/grid3.webp" alt="grid-3" className='w-full sm:h-[266px] h-fit object-contain'/>
                     <div>
-                        <p className='grid-headtext'>My Passion for Coding</p>
-                        <p className='grid-subtext'>I love solving problems and building things through code. Coding isn't just my profession - it is my passion.</p>
+                        <p className='grid-headtext'>Digital Experiences, Delivered</p>
+                        <p className='grid-subtext'>I craft digital experiences that blend clean, maintainable code with intuitive interface design. From wireframes in Figma to responsive front-end implementations, I focus on creating interfaces that delight users while solving real problems.</p>
                     </div>
                 </div>
             </div>
 
             <div className='xl:col-span-1 xl:row-span-2'>
                 <div className='grid-container'>
-                    <img src="assets/grid4.png" alt="grid-4" className='w-full md:h-[126px] sm:h-[276px] h-fit object-cover sm:object-top'/>
+                    <img src="assets/grid4.webp" alt="grid-4" className='w-full md:h-[126px] sm:h-[276px] h-fit object-cover sm:object-top'/>
                     <div className='space-y-2'>
                         <p className='grid-subtext text-center'>Contact Me</p>
                         <div className='copy-container'   role="button" tabIndex={0} onClick={handleCopy}>

@@ -5,7 +5,7 @@ import gsap from 'gsap'
 
 const DemoComputer = (props) => {
   const group = useRef()
-  const { nodes, materials} = useGLTF('/models/computer.glb')
+  const { nodes, materials} = useGLTF('/models/computer-opt.glb')
 
   const txt = useVideoTexture( props.texture ? props.texture : '/textures/project/project1.mp4') // ? import video texture
 
@@ -1012,6 +1012,6 @@ const DemoComputer = (props) => {
   )
 };
 
-useGLTF.preload('/models/computer.glb')
+useGLTF.preload('/models/computer-opt.glb')
 
 export default DemoComputer;

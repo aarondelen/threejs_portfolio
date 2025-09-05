@@ -69,7 +69,7 @@ const Experience = () => {
                       <p className="text-sm mb-5">
                         {pos} -- {duration}
                       </p>
-                      <p className="group-hover:text-white transition-all ease duration-150">
+                      <p className="group-hover:text-white transition-all ease duration-150 whitespace-pre-line">
                         {title}
                       </p>
                     </div>
