@@ -76,7 +76,9 @@ const About = () => {
                     <img src="assets/grid3.webp" alt="grid-3" className='w-full sm:h-[266px] h-fit object-contain'/>
                     <div>
                         <p className='grid-headtext'>Digital Experiences, Delivered</p>
-                        <p className='grid-subtext'>I craft digital experiences that blend clean, maintainable code with intuitive interface design. From wireframes in Figma to responsive front-end implementations, I focus on creating interfaces that delight users while solving real problems.</p>
+                        <p className='grid-subtext'>
+                        I craft digital experiences that blend clean code with intuitive design. From wireframes in Figma to responsive front-end implementations, I focus on creating interfaces that delight users while solving real problems.
+                        </p>
                     </div>
                 </div>
             </div>

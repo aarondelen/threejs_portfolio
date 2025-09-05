@@ -20,7 +20,7 @@ const Target = (props) => {
     });
 
   return (
-    <mesh {...props} ref={targetRef} rotation={[0, Math.PI / 6, 0]} scale={1.5}>
+    <mesh {...props} ref={targetRef} rotation={[0, Math.PI / 6, 0]}>
       <primitive object={scene} scale={1}/> // ? primitive adds both geometry and material
     </mesh>
   )

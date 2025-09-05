@@ -86,10 +86,10 @@ const Hero = () => {
                     </HeroCamera>
 
                         <group>
-                            <Target position={sizes.targetPosition}/>
-                            <ReactLogo position={sizes.reactLogoPosition}/>
-                            <Cube position={sizes.cubePosition}/>
-                            <Rings position={sizes.ringPosition}/>
+                            <Target position={sizes.targetPosition} scale={sizes.targetScale}/>
+                            <ReactLogo position={sizes.reactLogoPosition} scale={sizes.reactLogoScale}/>
+                            <Cube position={sizes.cubePosition} scale={sizes.cubeScale}/>
+                            <Rings position={sizes.ringPosition} scale={sizes.ringScale}/>
                         </group>
 
                         <ambientLight intensity={0.9}/>

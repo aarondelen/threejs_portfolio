@@ -63,7 +63,7 @@ export const myProjects = [
     desc: 'Podcastr is a revolutionary Software-as-a-Service platform that transforms the way podcasts are created. With advanced AI-powered features like text-to-multiple-voices functionality, it allows creators to generate diverse voiceovers from a single text input.',
     subdesc:
       'Built as a unique Software-as-a-Service app with Next.js 14, Tailwind CSS, TypeScript, Framer Motion and Convex, Podcastr is designed for optimal performance and scalability.',
-    href: 'https://www.youtube.com/watch?v=zfAb95tJvZQ',
+    href: '#',
     texture: '/textures/project/project1.mp4',
     logo: '/assets/project-logo1.png',
     logoStyle: {
@@ -100,7 +100,7 @@ export const myProjects = [
     desc: 'LiveDoc is a powerful collaborative app that elevates the capabilities of real-time document editing. As an enhanced version of Google Docs, It supports millions of collaborators simultaneously, ensuring that every change is captured instantly and accurately.',
     subdesc:
       'With LiveDoc, users can experience the future of collaboration, where multiple contributors work together in real time without any lag, by using Next.js and Liveblocks newest features.',
-    href: 'https://www.youtube.com/watch?v=y5vE8y_f_OM',
+    href: '#',
     texture: '/textures/project/project2.mp4',
     logo: '/assets/project-logo2.png',
     logoStyle: {
@@ -137,7 +137,7 @@ export const myProjects = [
     desc: 'An innovative healthcare platform designed to streamline essential medical processes. It simplifies patient registration, appointment scheduling, and medical record management, providing a seamless experience for both healthcare providers and patients.',
     subdesc:
       'With a focus on efficiency, CarePulse integrantes complex forms and SMS notifications, by using Next.js, Appwrite, Twillio and Sentry that enhance operational workflows.',
-    href: 'https://www.youtube.com/watch?v=lEflo_sc82g',
+    href: '#',
     texture: '/textures/project/project3.mp4',
     logo: '/assets/project-logo3.png',
     logoStyle: {
@@ -176,7 +176,7 @@ export const myProjects = [
     desc: 'Horizon is a comprehensive online banking platform that offers users a centralized finance management dashboard. It allows users to connect multiple bank accounts, monitor real-time transactions, and seamlessly transfer money to other users.',
     subdesc:
       'Built with Next.js 14 Appwrite, Dwolla and Plaid, Horizon ensures a smooth and secure banking experience, tailored to meet the needs of modern consumers.',
-    href: 'https://www.youtube.com/watch?v=PuOVqP_cjkE',
+    href: '#',
     texture: '/textures/project/project4.mp4',
     logo: '/assets/project-logo4.png',
     logoStyle: {
@@ -213,7 +213,7 @@ export const myProjects = [
     desc: 'Imaginify is a groundbreaking Software-as-a-Service application that empowers users to create stunning photo manipulations using AI technology. With features like AI-driven image editing, a payments system, and a credits-based model.',
     subdesc:
       'Built with Next.js 14, Cloudinary AI, Clerk, and Stripe, Imaginify combines cutting-edge technology with a user-centric approach. It can be turned into a side income or even a full-fledged business.',
-    href: 'https://www.youtube.com/watch?v=Ahwoks_dawU',
+    href: '#',
     texture: '/textures/project/project5.mp4',
     logo: '/assets/project-logo5.png',
     logoStyle: {
@@ -249,14 +249,24 @@ export const myProjects = [
 
 export const calculateSizes = (isSmall, isMobile, isTablet) => {
   return {
-    deskScale: isSmall ? 0.05 : isMobile ? 0.06 : 0.065,
-    deskPosition: isMobile ? [0.5, -3.5, 0] : [0.25, -5.5, 0],
-    cubePosition: isSmall ? [4, -5, 0] : isMobile ? [4.7, -5.7, 0] : isTablet ? [5, -5, 0] : [9, -5.5, 0],
-    reactLogoPosition: isSmall ? [3, 4, 0] : isMobile ? [4.5, 4, 0] : isTablet ? [5, 4, 0] : [10.5, 3, 0],
-    ringPosition: isSmall ? [-5, 7, 0] : isMobile ? [-9, 10, 0] : isTablet ? [-12, 10, 0] : [-22, 10, 0],
-    targetPosition: isSmall ? [-5, -10, -10] : isMobile ? [-6.3, -10, -10] : isTablet ? [-11, -7, -10] : [-13, -13, -10],
+    deskPosition: isSmall ? [0.4, -3.2, 0] : isMobile ? [0.5, -3.5, 0] : isTablet ? [0.25, -5, 0] : [0.25, -5.5, 0],
+    deskScale:    isSmall ? 0.05 :           isMobile ? 0.06 :           isTablet ? 0.065         : 0.07,
+
+    cubePosition: isSmall? [2.7, -5, 0]: isMobile? [5.5, -4, 0]: isTablet? [8, -5.5, 0]: [10, -5.5, 0],
+    cubeScale:    isSmall ? 0.45 :       isMobile ? 0.7 :        isTablet ? 0.85       : 1,
+
+    reactLogoPosition: isSmall ? [2.8, 3.5, 0] : isMobile ? [6.2, 3.2, 0] : isTablet ? [8.2, 3, 0] : [10.5, 3, 0],
+    reactLogoScale:    isSmall ? 0.3 :           isMobile ? 0.43 :         isTablet ? 0.65         : 0.7,
+
+    ringPosition: isSmall ? [-2.4, 4.5, 0] : isMobile ? [-6.2, 5, 0] : isTablet ? [-8.5, 4.7, 0] : [-11, 3, 0],
+    ringScale:    isSmall ? 0.3 :            isMobile ? 0.43 :        isTablet ? 0.65            : 0.7,
+
+    targetPosition: isSmall ? [-4, -7, -8] : isMobile ? [-9, -10, -10] : isTablet ? [-12, -11, -10] : [-15, -11, -10],
+    targetScale:    isSmall ? 0.9 :               isMobile ? 1.3 :              isTablet ? 2         : 2.5,
   };
 };
+
+
 
 export const workExperiences = [
   {
@@ -264,8 +274,7 @@ export const workExperiences = [
     name: 'Collantra',
     pos: 'Founder',
     duration: '2023',
-    title: `Prototyped a creator–brand collaboration SaaS with full dashboard, community features, and secure onboarding powered by Supabase and Clerk.
-    Focused on delivering polished UI/UX using React, shadcn/ui, and Framer Motion. Learned fast-paced product building as a solo founder, balancing frontend detail with backend architecture.`,
+    title: `Prototyped a creator–brand collaboration SaaS with full dashboard, community features, and secure onboarding powered by Supabase and Clerk. Focused on delivering polished UI/UX using React, shadcn/ui, and Framer Motion.`,
     icon: '/assets/collantra.svg',
     animation: 'victory',
   },
@@ -274,11 +283,11 @@ export const workExperiences = [
     name: 'Datagen OPC',
     pos: 'AI Tech Specialist',
     duration: '2022 – 2023',
-    title: `Engineered AI agents for voice campaigns, built custom scrapers, and automated lead delivery pipelines for international clients. 
-    Improved campaign performance by testing LLM configurations with OpenAI, Deepgram, and PlayHT. Collaborated with devs and QA to align system reliability with client KPIs.`,
+    title: `Engineered AI agents for voice campaigns, built custom scrapers, and automated lead delivery pipelines for international clients. Improved campaign performance by testing LLM configurations with OpenAI, Deepgram, and PlayHT.`,
     icon: '/assets/dtgLogo.png',
     animation: 'clapping',
   },
 ];
+
 
 

@@ -1,8 +1,14 @@
 import React from 'react'
+import { useMediaQuery } from 'react-responsive';
+    
 
 const Footer = () => {
+    const isSmall = useMediaQuery({maxWidth: 440});
+
   return (
-    <section className='c-space pt-7 pb-3 border-t border-black-300 flex justify-between items-center flex-wrap gap-5'>
+
+        <section
+      className={`c-space pt-7 pb-3 border-t border-black-300 flex flex-wrap gap-5 ${isSmall ? 'text-center justify-center' : 'justify-between items-center'}`}>
         <div className='text-white-500 flex gap-2'>
             <p>Terms & Conditions </p>
             <p>|</p>
