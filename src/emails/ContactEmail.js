@@ -14,7 +14,7 @@ export function ContactEmail({ fromName, fromEmail, message }) {
     <body style="font-family: Inter, Arial, sans-serif; background:#0b0b0b; color:#f5f5f5; padding:24px;">
       <table role="presentation" width="100%" style="max-width:600px; margin:0 auto; background:#111; border:1px solid #222; border-radius:12px; padding:24px;">
         <tr><td>
-          <h1 style="margin:0 0 12px; font-size:20px;">New portfolio message</h1>
+          <h1 style="margin:0 0 12px; font-size:20px;">New Portfolio Message</h1>
           <p style="margin:0 0 8px;">
             <strong>From:</strong> ${safe(fromName)} &lt;${safe(fromEmail)}&gt;
           </p>
