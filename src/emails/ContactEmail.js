@@ -1,8 +1,11 @@
 // emails/contactTemplate.js
 export function ContactEmail({ fromName, fromEmail, message }) {
   const safe = (s = "") =>
-    String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
-    
+    String(s)
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;");
+
   return `
   <!doctype html>
   <html>
