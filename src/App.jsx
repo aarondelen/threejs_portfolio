@@ -7,7 +7,7 @@ import Clients from "./sections/Clients.jsx";
 import Experience from "./sections/Experience.jsx";
 import Contact from "./sections/Contact.jsx";
 import Footer from "./sections/Footer.jsx";
-import Toaster from "./components/Toaster.jsx";
+import AppToaster from "./components/AppToaster.jsx";
 
 const App = () => {
   return (
@@ -20,7 +20,7 @@ const App = () => {
       <Experience />
       <Contact />
       <Footer />
-      <Toaster />
+      <AppToaster />
     </main>
   );
 };

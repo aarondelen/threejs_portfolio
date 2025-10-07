@@ -1,6 +1,6 @@
 import { Toaster } from 'react-hot-toast'
 
-const Toaster = () => {
+const AppToaster = () => {
   return (
     <div>
       <Toaster position="top-right" toastOptions={{
@@ -16,4 +16,4 @@ const Toaster = () => {
   )
 }
 
-export default Toaster
+export default AppToaster
