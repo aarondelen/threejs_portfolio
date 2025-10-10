@@ -1,5 +1,5 @@
-import React, { useRef, useEffect } from 'react'
-import { useGLTF, useAnimations, useVideoTexture } from '@react-three/drei'
+import { useRef, useEffect } from 'react'
+import { useGLTF, useVideoTexture } from '@react-three/drei'
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 
@@ -37,7 +37,7 @@ const DemoComputer = (props) => {
           rotation={[1.571, -0.005, 0.031]}
           scale={[0.661, 0.608, 0.401]}
         >
-            <meshBasicMaterial map={txt} /> // ? video texture
+            <meshBasicMaterial map={txt} /> 
         </mesh>
         <group
           name="RootNode"

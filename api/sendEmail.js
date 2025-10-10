@@ -1,6 +1,7 @@
 import { Resend } from "resend";
 import { ContactEmail } from "../src/emails/ContactEmail.js";
 
+
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 export default async function handler(req, res) {

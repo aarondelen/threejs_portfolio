@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useMemo } from 'react'
+import { useEffect, useRef, useMemo } from 'react'
 import { useAnimations, useFBX, useGLTF } from '@react-three/drei'
 
 // ✅ Preload avatar GLB once (avoids re-fetching on every mount)
