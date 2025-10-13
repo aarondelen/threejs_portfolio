@@ -207,8 +207,44 @@ export const myProjects = [
       },
     ],
   },
+  {
+    title: "Solar Landing Page – React Redesign",
+    desc: "Solar Landing Page is a modern, fully responsive website rebuilt from a provided template. Initially given during an interview, the original design was reimagined with a cleaner structure, enhanced visuals, and smooth animations to create a more polished landing experience.",
+    subdesc:
+      "Developed from scratch in one day using React, Tailwind CSS, Shadcn UI, and Framer Motion, this project focuses on responsiveness, visual refinement, and showcasing rapid design-to-code execution through modern frontend tools.",
+    href: "https://solar-aarondelen.vercel.app/",
+    texture: "/textures/project/project5.mp4",
+    logo: "/assets/project-logo5.png",
+    logoStyle: {
+      backgroundColor: "#0E1F38",
+      border: "0.2px solid #0E2D58",
+      boxShadow: "0px 0px 60px 0px #2F67B64D",
+    },
+    spotlight: "/assets/spotlight5.png",
+    tags: [
+      {
+        id: 1,
+        name: "React",
+        path: "/assets/react.svg",
+      },
+      {
+        id: 2,
+        name: "TailwindCSS",
+        path: "assets/tailwindcss.png",
+      },
+      {
+        id: 3,
+        name: "ShadCN UI",
+        path: "/assets/shadcn-ui-seeklogo.png",
+      },
+      {
+        id: 4,
+        name: "Framer Motion",
+        path: "/assets/framer.png",
+      },
+    ],
+  },
 ];
-
 
 export const calculateSizes = (isSmall, isMobile, isTablet) => {
   return {

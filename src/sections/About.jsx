@@ -8,6 +8,7 @@ import Globe from 'react-globe.gl';
 const About = () => {
     const [hasCopied, setHasCopied] = useState(false);
 
+
     const handleCopy = () => {
         navigator.clipboard.writeText("aarondelen.ad@gmail.com");
         setHasCopied(true);
