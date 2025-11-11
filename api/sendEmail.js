@@ -1,7 +1,6 @@
 import { Resend } from "resend";
 import { ContactEmail } from "../src/emails/ContactEmail.js";
 
-
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 export default async function handler(req, res) {
@@ -11,6 +10,7 @@ export default async function handler(req, res) {
 
   try {
     const { from_name, from_email, message } = req.body;
+
     const html = ContactEmail({
       fromName: from_name,
       fromEmail: from_email,
@@ -18,8 +18,8 @@ export default async function handler(req, res) {
     });
 
     const data = await resend.emails.send({
-      from: process.env.RESEND_FROM || "onboarding@resend.dev",
-      to: process.env.RESEND_TO || "you@example.com",
+      from: process.env.RESEND_FROM,
+      to: process.env.RESEND_TO,
       subject: `New message from ${from_name}`,
       html,
     });
