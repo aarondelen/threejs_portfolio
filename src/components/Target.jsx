@@ -5,10 +5,14 @@ import { useGSAP } from "@gsap/react";
 
 const Target = (props) => {
   const targetRef = useRef();
-  const { scene } = useGLTF(
-    "https://vazxmixjsiawhamofees.supabase.co/storage/v1/object/public/models/target-stand/model.gltf"
-  );
-  // const { scene } = useGLTF('/models/target.glb');
+  let scene;
+
+  try {
+    scene = useGLTF("/models/target-stand/model.gltf").scene;
+  } catch (e) {
+    console.warn("Target model failed to load:", e);
+    return null; // or render a placeholder mesh
+  }
 
   useGSAP(() => {
     gsap.to(targetRef.current.position, {
@@ -18,7 +22,7 @@ const Target = (props) => {
       yoyo: true,
     });
   });
-  // ? primitive adds both geometry and material
+
   return (
     <mesh {...props} ref={targetRef} rotation={[0, Math.PI / 6, 0]}>
       <primitive object={scene} scale={1} />
